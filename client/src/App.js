@@ -1,11 +1,22 @@
 import "./App.scss";
-import Home from "./home/Home";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import Home from "./pages/home/Home";
+import WatchPage from "./pages/watch/WatchPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/watch" element={<WatchPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
